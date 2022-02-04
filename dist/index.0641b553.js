@@ -540,7 +540,7 @@ async function getCountryInfo() {
         console.error(error);
     }
 }
-getCountryInfo();
+getCountryInfo(); // Bonus opdracht met destructuring objects krijg ik nog niet werkend.
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');

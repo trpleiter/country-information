@@ -23,4 +23,6 @@ async function getCountryInfo() {
 
 getCountryInfo();
 
+// Bonus opdracht met destructuring objects krijg ik nog niet werkend.
+
 
