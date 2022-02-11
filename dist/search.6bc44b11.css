@@ -1,0 +1,18 @@
+.search-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#earth-icon {
+    width: 300px;
+}
+
+.search-bar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+/*# sourceMappingURL=search.6bc44b11.css.map */

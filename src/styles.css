@@ -16,6 +16,13 @@ h1 {
     flex-shrink: 1;
 }
 
+button {
+    padding: 16px;
+    background-color: lightslategrey;
+    color: white;
+    border-radius: 8px;
+}
+
 li img {
     width: 20px;
     heigt:20px;
