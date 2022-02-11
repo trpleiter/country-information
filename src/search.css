@@ -9,9 +9,35 @@
     width: 300px;
 }
 
-.search-bar-container {
+img {
+    width: 25px;
+}
+
+form {
+    margin: 20px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    margin-top: 50px;
+}
+
+#information-country{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.country-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+    padding: 16px;
+    list-style-type: none;
+    border-style: dotted;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: large;
+
 }

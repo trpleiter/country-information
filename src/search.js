@@ -1,34 +1,46 @@
 import axios from "axios";
 
 const countryInfoElement = document.getElementById('information-country');
+const searchbarElement = document.getElementById('searched-country');
+const searchBar = document.getElementById('search-bar-container');
 
-async function getSpecificCountryInfo() {
+searchBar.addEventListener('submit', getSearchInput);
+
+async function getSpecificCountryInfo(name) {
     try {
-        const resultCountryInfo = await axios.get('https://restcountries.com/v2/all');
-        console.log(resultCountryInfo.data[157])
-        for (let i = 0; i < resultCountryInfo.data.length; i++){
-            const { flag, name, subregion, population, capital, demonym } = resultCountryInfo.data[i];
-            console.log(resultCountryInfo.data[i]);
-        }
+        const resultCountryInfo = await axios.get(`https://restcountries.com/v2/name/${name}`);
+        let specificCountry = resultCountryInfo.data[0];
+        console.log(specificCountry)
 
-        resultCountryInfo.data.map((countryInfo) => {
-            countryInfoElement.innerHTML +=
-                `<div class="country-info">
-                 <li><img src="${countryInfo.flag}"</img> ${countryInfo.name}</li>
-                 <li>${countryInfo.name} is situated ${countryInfo.subregion}. It has a population of 
-                     ${countryInfo.population} people. The capital is ${countryInfo.capital} and you can pay with 
-                        . They speak ${countryInfo.demonym}.
+        countryInfoElement.innerHTML =
+            `<div class="country-info">
+                 <h3><img src="${specificCountry.flag}"</img> ${specificCountry.name}</h3>
+                 <li>${specificCountry.name} is situated ${specificCountry.subregion}. It has a population of
+                     ${specificCountry.population} people. The capital is ${specificCountry.capital} and you can pay 
+                     with ${getCurrencies(specificCountry.currencies)}. They speak ${specificCountry.demonym}.
                        </li>
                  </div>`
-        })
-        }
 
-    catch (e) {
+
+    } catch (e) {
         console.error(e);
+        countryInfoElement.innerHTML = '' +
+            `<p>${name} does not exist, try again.</p>`
     }
 }
 
-getSpecificCountryInfo();
+function getCurrencies(currencies) {
+    if (currencies.length === 2) {
+        return `and you can pay with ${currencies[0].name} and ${currencies[1].name}`
+    } else {
+        return `and you can pay with ${currencies[0].name}`
+    }
+}
 
-//filter methodes?
+function getSearchInput(e) {
+    e.preventDefault();
+    getSpecificCountryInfo(searchbarElement.value);
+    searchBar.reset();
+}
+
 //currencies nog toevoegen

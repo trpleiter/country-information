@@ -16,7 +16,7 @@ h1 {
     flex-shrink: 1;
 }
 
-button {
+#detail-button {
     padding: 16px;
     background-color: lightslategrey;
     color: white;
