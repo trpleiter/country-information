@@ -1,3 +1,7 @@
+body {
+    font-family: "Kristen ITC", Serif;
+}
+
 .search-intro {
     display: flex;
     flex-direction: column;
@@ -19,6 +23,16 @@ form {
     justify-content: center;
 }
 
+#searched-country {
+    width: 300px;
+}
+
+button {
+    padding: 16px;
+    background-color: #fff5ef;
+    font-family: "Kristen ITC", Serif
+}
+
 #information-country{
     display: flex;
     flex-direction: column;
@@ -32,12 +46,16 @@ form {
     align-items: flex-start;
     width: 400px;
     padding: 16px;
-    list-style-type: none;
-    border-style: dotted;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #fff5ef;
 }
 
 h3 {
     font-weight: bold;
     font-size: large;
+}
 
+p {
+    text-align: center;
 }

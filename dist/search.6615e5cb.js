@@ -530,7 +530,6 @@ async function getSpecificCountryInfo(name) {
     try {
         const resultCountryInfo = await _axiosDefault.default.get(`https://restcountries.com/v2/name/${name}`);
         let specificCountry = resultCountryInfo.data[0];
-        console.log(specificCountry);
         countryInfoElement.innerHTML = `<div class="country-info">
                  <h3><img src="${specificCountry.flag}"</img> ${specificCountry.name}</h3>
                  <li>${specificCountry.name} is situated ${specificCountry.subregion}. It has a population of
@@ -551,7 +550,7 @@ function getSearchInput(e) {
     e.preventDefault();
     getSpecificCountryInfo(searchbarElement.value);
     searchBar.reset();
-} //currencies nog toevoegen
+}
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');

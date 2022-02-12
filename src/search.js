@@ -10,7 +10,6 @@ async function getSpecificCountryInfo(name) {
     try {
         const resultCountryInfo = await axios.get(`https://restcountries.com/v2/name/${name}`);
         let specificCountry = resultCountryInfo.data[0];
-        console.log(specificCountry)
 
         countryInfoElement.innerHTML =
             `<div class="country-info">
@@ -20,12 +19,10 @@ async function getSpecificCountryInfo(name) {
                      with ${getCurrencies(specificCountry.currencies)}. They speak ${specificCountry.demonym}.
                        </li>
                  </div>`
-
-
     } catch (e) {
         console.error(e);
         countryInfoElement.innerHTML = '' +
-            `<p>${name} does not exist, try again.</p>`
+            `<p>${name} does not exist, try again.</p>`;
     }
 }
 
@@ -42,5 +39,3 @@ function getSearchInput(e) {
     getSpecificCountryInfo(searchbarElement.value);
     searchBar.reset();
 }
-
-//currencies nog toevoegen

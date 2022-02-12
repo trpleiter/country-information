@@ -1,3 +1,7 @@
+body {
+    font-family: "Kristen ITC", Serif;
+}
+
 .outer-container {
     display: flex;
     flex-direction: column;
@@ -18,9 +22,9 @@ h1 {
 
 #detail-button {
     padding: 16px;
-    background-color: lightslategrey;
-    color: white;
+    background-color: #fff5ef;
     border-radius: 8px;
+    font-family: "Kristen ITC", Serif
 }
 
 li img {
@@ -39,7 +43,7 @@ li img {
     padding: 16px;
     border: 1px solid black;
     border-radius: 15px;
-    background-color: lightslategrey;
+    background-color: #fff5ef;
 }
 
 .country-info {
