@@ -25,12 +25,13 @@ form {
 
 #searched-country {
     width: 300px;
+    border-radius: 8px;
 }
 
 button {
+    border-radius: 8px;
     padding: 16px;
     background-color: #fff5ef;
-    font-family: "Kristen ITC", Serif
 }
 
 #information-country{
@@ -49,6 +50,8 @@ button {
     border: 1px solid black;
     border-radius: 15px;
     background-color: #fff5ef;
+    list-style-type: none;
+
 }
 
 h3 {
